@@ -61,21 +61,7 @@
     <a id="iit-logoT" href="index.html">
       <img id="iit-logo" src="{% static 'assets/img/IIT_Kharagpur_Logo.svg.png' %}" alt="IIT Kharagpur Logo">
     </a>
-    <div id="login-button">
-      <button>Login</button>
-    </div>
-    <div class="position-relative">
-      <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-      <!-- ======= Search Form ======= -->
-      <div class="search-form-wrap js-search-form-wrap">
-        <form action="search-result.html" class="search-form">
-          <span class="icon bi-search"></span>
-          <input type="text" placeholder="Search" class="form-control">
-          <button class="btn js-search-close"><span class="bi-x"></span></button>
-        </form>
-      </div><!-- End Search Form -->
-    </div>
+    
   </div>
 
   <!-- Bottom Nav -->
@@ -127,7 +113,39 @@
         <li class="dropdown"><a href="sponsors.html"><span>Sponsors</span></a></li>
         <li class="dropdown"><a href="gallery.html"><span>Gallery</span></a></li>
         <li class="dropdown"><a href="public/liveData.html"><span>Live Data</span></a></li>
-        <li class="contactus"><button>Get In Touch !</button>
+        <li class="contactus"><button id="contact-us-button">Get In Touch !</button></li>
+        <div class="position-relative">
+          <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+          <!-- ======= Search Form ======= -->
+          <div class="search-form-wrap js-search-form-wrap">
+            <form action="search-result.html" class="search-form">
+              <span class="icon bi-search"></span>
+              <input type="text" placeholder="Search" class="form-control">
+              <button class="btn js-search-close"><span class="bi-x"></span></button>
+            </form>
+          </div><!-- End Search Form -->
+        </div>
+        
+
+    <!-- Contact Us Form Modal -->
+    <div id="contact-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <label for="id_name">Name:</label>
+                <input type="text" id="id_name" name="name" required><br>
+                <label for="id_email">Email:</label>
+                <input type="email" id="id_email" name="email" required><br>
+                <label for="id_message">Message:</label>
+                <textarea id="id_message" name="message" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </div>
       </ul>
     </nav>
   </div>
@@ -509,9 +527,44 @@
             }
         });
     });
+    document.getElementById("contact-us-button").onclick = function() {
+      document.getElementById("contact-form-modal").style.display = "block";
+  }
+
+  document.querySelector(".close-button").onclick = function() {
+      document.getElementById("contact-form-modal").style.display = "none";
+  }
+
+  // AJAX form submission
+  document.getElementById("contact-us-button").onclick = function() {
+    document.getElementById("contact-form-modal").style.display = "block";
+}
+
+document.querySelector(".close-button").onclick = function() {
+    document.getElementById("contact-form-modal").style.display = "none";
+}
+
+// AJAX form submission
+document.getElementById("contact-form").onsubmit = function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+
+    fetch("{% url 'contact' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+        },
+        body: formData
+    }).then(response => response.json()).then(data => {
+        if (data.success) {
+            alert('Thank you for your message!');
+            document.getElementById("contact-form-modal").style.display = "none";
+        } else {
+            alert('There was an error with your submission.');
+        }
+    }).catch(error => console.error('Error:', error));
+}
 </script>
-
-
 </body>
 
 </html>
