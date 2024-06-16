@@ -114,9 +114,6 @@
         <li class="dropdown"><a href="gallery.html"><span>Gallery</span></a></li>
         <li class="dropdown"><a href="public/liveData.html"><span>Live Data</span></a></li>
         <li class="contactus"><button id="contact-us-button">Get In Touch !</button></li>
-<<<<<<< Updated upstream
-        
-=======
         <div class="position-relative">
           <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -129,7 +126,7 @@
             </form>
           </div><!-- End Search Form -->
         </div>
->>>>>>> Stashed changes
+
         
 
     <!-- Contact Us Form Modal -->
@@ -148,6 +145,7 @@
               <button type="submit">Submit</button>
           </form>
       </div>
+  </div>
       
   </div>
       </ul>
@@ -539,39 +537,64 @@
       document.getElementById("contact-form-modal").style.display = "none";
   }
 
-  // AJAX form submission
-  document.getElementById("contact-us-button").onclick = function() {
-    document.getElementById("contact-form-modal").style.display = "block";
+// AJAX form submission
+document.getElementById("contact-us-button").onclick = function() {
+  document.getElementById("contact-form-modal").style.display = "block";
 }
 
 document.querySelector(".close-button").onclick = function() {
-    document.getElementById("contact-form-modal").style.display = "none";
+  document.getElementById("contact-form-modal").style.display = "none";
 }
 
 // AJAX form submission
 document.getElementById("contact-form").onsubmit = function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
+  event.preventDefault();
+  const formData = new FormData(this);
 
-    fetch("{% url 'contact' %}", {
-        method: 'POST',
-        headers: {
-            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-        },
-        body: formData
-    }).then(response => response.json()).then(data => {
-        if (data.success) {
-            alert('Thank you for your message!');
-            document.getElementById("contact-form-modal").style.display = "none";
-        } else {
-            alert('There was an error with your submission.');
-        }
-    }).catch(error => console.error('Error:', error));
+  fetch("{% url 'contact' %}", {
+      method: 'POST',
+      headers: {
+          'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+      },
+      body: formData
+  }).then(response => response.json()).then(data => {
+      if (data.success) {
+          alert('Thank you for your message!');
+          document.getElementById("contact-form-modal").style.display = "none";
+          document.getElementById("contact-form").reset(); 
+      } else {
+          alert('There was an error with your submission.');
+      }
+  }).catch(error => console.error('Error:', error));
 }
-function search() {
-  var searchText = $("#searchBar").val();
-  $(".searchText:contains('" + searchText + "')").css("background","#FF0");
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
 }
+
+const csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+$.ajaxSetup({
+  beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+  }
+});
 </script>
 </body>
 

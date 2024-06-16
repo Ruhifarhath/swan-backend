@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import JsonResponse
+from .forms import ContactForm
 
-# Create your views here.
 def home(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
