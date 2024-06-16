@@ -114,7 +114,22 @@
         <li class="dropdown"><a href="gallery.html"><span>Gallery</span></a></li>
         <li class="dropdown"><a href="public/liveData.html"><span>Live Data</span></a></li>
         <li class="contactus"><button id="contact-us-button">Get In Touch !</button></li>
+<<<<<<< Updated upstream
         
+=======
+        <div class="position-relative">
+          <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+          <!-- ======= Search Form ======= -->
+          <div class="search-form-wrap js-search-form-wrap">
+            <form action="search-result.html" class="search-form">
+              <span class="icon bi-search"></span>
+              <input type="searchtext" placeholder="Search" class="form-control">
+              <button class="btn js-search-close" onclick="search()"><span class="bi-x"></span></button>
+            </form>
+          </div><!-- End Search Form -->
+        </div>
+>>>>>>> Stashed changes
         
 
     <!-- Contact Us Form Modal -->
@@ -552,6 +567,10 @@ document.getElementById("contact-form").onsubmit = function(event) {
             alert('There was an error with your submission.');
         }
     }).catch(error => console.error('Error:', error));
+}
+function search() {
+  var searchText = $("#searchBar").val();
+  $(".searchText:contains('" + searchText + "')").css("background","#FF0");
 }
 </script>
 </body>
