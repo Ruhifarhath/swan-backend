@@ -114,38 +114,27 @@
         <li class="dropdown"><a href="gallery.html"><span>Gallery</span></a></li>
         <li class="dropdown"><a href="public/liveData.html"><span>Live Data</span></a></li>
         <li class="contactus"><button id="contact-us-button">Get In Touch !</button></li>
-        <div class="position-relative">
-          <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-          <!-- ======= Search Form ======= -->
-          <div class="search-form-wrap js-search-form-wrap">
-            <form action="search-result.html" class="search-form">
-              <span class="icon bi-search"></span>
-              <input type="text" placeholder="Search" class="form-control">
-              <button class="btn js-search-close"><span class="bi-x"></span></button>
-            </form>
-          </div><!-- End Search Form -->
-        </div>
+        
         
 
     <!-- Contact Us Form Modal -->
     <div id="contact-form-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Contact Us</h2>
-            <form id="contact-form" method="post" action="{% url 'contact' %}">
-                {% csrf_token %}
-                <label for="id_name">Name:</label>
-                <input type="text" id="id_name" name="name" required><br>
-                <label for="id_email">Email:</label>
-                <input type="email" id="id_email" name="email" required><br>
-                <label for="id_message">Message:</label>
-                <textarea id="id_message" name="message" required></textarea><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        
-    </div>
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Contact Us</h2>
+          <form id="contact-form" method="post" action="{% url 'contact' %}">
+              {% csrf_token %}
+              <label for="id_name">Name:</label>
+              <input type="text" id="id_name" name="name" required><br>
+              <label for="id_email">Email:</label>
+              <input type="email" id="id_email" name="email" required><br>
+              <label for="id_message">Message:</label>
+              <textarea id="id_message" name="message" required></textarea><br>
+              <button type="submit">Submit</button>
+          </form>
+      </div>
+      
+  </div>
       </ul>
     </nav>
   </div>
@@ -274,84 +263,84 @@
 <!-- End Facts Section -->
 
           <!-- Announcements Section -->
-          </div>
-          <div class="col-lg-4 col-md-12">
-            <div id="announce" class="trending">
-              <h3>Announcements</h3>
-              <div class="trending-post-container">
-                <ul class="trending-post marquee">
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">1</span>
-                      <h3>Breakthrough in Quantum Computing: IBM Unveils New Quantum Processor</h3>
-                      <span class="author">Jane Cooper</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">2</span>
-                      <h3>AI Revolution: OpenAI Releases GPT-4 with Enhanced Capabilities</h3>
-                      <span class="author">Wade Warren</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">3</span>
-                      <h3>5G Networks Expand Globally: What It Means for the Future</h3>
-                      <span class="author">Esther Howard</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">4</span>
-                      <h3>Advancements in Renewable Energy: Solar and Wind Power Innovations</h3>
-                      <span class="author">Cameron Williamson</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">5</span>
-                      <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
-                      <span class="author">Jenny Wilson</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">6</span>
-                      <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
-                      <span class="author">Jenny Wilson</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">7</span>
-                      <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
-                      <span class="author">Jenny Wilson</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">8</span>
-                      <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
-                      <span class="author">Jenny Wilson</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="single-post.html">
-                      <span class="number">9</span>
-                      <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
-                      <span class="author">Jenny Wilson</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div id="announce" class="trending">
+            <h3>Announcements</h3>
+            <div class="trending-post-container">
+              <ul class="trending-post marquee">
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">1</span>
+                    <h3>Breakthrough in Quantum Computing: IBM Unveils New Quantum Processor</h3>
+                    <span class="author">Jane Cooper</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">2</span>
+                    <h3>AI Revolution: OpenAI Releases GPT-4 with Enhanced Capabilities</h3>
+                    <span class="author">Wade Warren</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">3</span>
+                    <h3>5G Networks Expand Globally: What It Means for the Future</h3>
+                    <span class="author">Esther Howard</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">4</span>
+                    <h3>Advancements in Renewable Energy: Solar and Wind Power Innovations</h3>
+                    <span class="author">Cameron Williamson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">5</span>
+                    <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
+                    <span class="author">Jenny Wilson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">6</span>
+                    <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
+                    <span class="author">Jenny Wilson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">7</span>
+                    <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
+                    <span class="author">Jenny Wilson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">8</span>
+                    <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
+                    <span class="author">Jenny Wilson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-post.html">
+                    <span class="number">9</span>
+                    <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
+                    <span class="author">Jenny Wilson</span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-  
     </div>
-    <!-- End Announcements section   -->
+
+  </div>
+  <!-- End Announcements section   -->
 
  <!-- Domains of Research Section -->
 <section id="dor" class="services">
