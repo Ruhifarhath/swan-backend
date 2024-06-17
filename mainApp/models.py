@@ -28,3 +28,20 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+class Member(models.Model):
+    ROLE_CHOICES = [
+        ('Guide', 'Guide'),
+        ('Visiting Professor', 'Visiting Professor'),
+        ('Post-Doc Student', 'Post-Doc Student'),
+        ('Ph.D. Student', 'Ph.D. Student'),
+        ('M.S. Student', 'M.S. Student'),
+    ]
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=50, choices=ROLE_CHOICES)
+    photo = models.ImageField(upload_to='members/')
+    twitter = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name

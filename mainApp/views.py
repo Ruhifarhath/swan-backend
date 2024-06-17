@@ -21,8 +21,6 @@ def announcements_view(request):
     announcements = Announcement.objects.all().order_by('-created_at')[:10]  # Fetch latest 10 announcements
     return render(request, 'index.html', {'announcements': announcements})
 
-def currentMembers_view(request):
-    return render(request,'current-members.html')
 
 def pastMembers_view(request):
     return render(request,'past-members.html')
@@ -40,3 +38,8 @@ def visiting_students_view(request):
     return render(request, 'visiting-students.html', {'students': students})
 
 
+def current_members(request):
+    members = Member.objects.all()
+    return render(request, 'current-members.html', {'members': members})
+# def visiting_view(request):
+#     return render(request,'visiting-students.html')
