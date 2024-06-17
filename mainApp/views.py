@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Announcement
+from .models import *
 
 from .forms import ContactForm
 
@@ -30,5 +30,13 @@ def pastMembers_view(request):
 def mtech_view(request):
     return render(request,'mtechStudents.html')
 
-# def visiting_view(request):
-#     return render(request,'visiting-students.html')
+def mtech_students_view(request):
+    students = MTechStudent.objects.all()
+    return render(request, 'mtechStudents.html', {'students': students})
+
+
+def visiting_students_view(request):
+    students = VisitingStudent.objects.all()
+    return render(request, 'visiting-students.html', {'students': students})
+
+

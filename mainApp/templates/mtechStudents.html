@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Mtech Students{% endblock title %}
+
+
+{% block body %}
+  <main id="main">
+
+ 
+<div class="container-mtech">
+  <h1>M.Tech Students</h1>
+  <ul class="thesis-list">
+      {% for student in students %}
+          <li>
+              <span id="Mtech-names"></span> {{ student.name }}, "{{ student.thesis_title }}", M. Tech. Thesis, IIT Kharagpur, {{ student.thesis_year }}.
+              {% if student.co_supervisor %}
+                  [Co-Supervisor: {{ student.co_supervisor }}]
+              {% endif %}
+          </li>
+      {% endfor %}
+  </ul>
+</div>
+
+
+    {% comment %} <div class="container-mtech">
+      <h1>M.Tech Students</h1>
+      <ul class="thesis-list">
+          <li><span id="Mtech-names"></span> Satyadeep Mishra, "Social Sensing-based Duty Cycle Management for Wireless Sensor Networks"  , M. Tech. (ICT) Thesis, IIT Kharagpur, 2011-2013.</li>
+          <li><span id="Mtech-names"></span>, , M. Tech. Thesis, IIT Kharagpur, 2011-2013.</li>
+          <li><span id="Mtech-names"></span>, , M. Tech. Thesis, IIT Kharagpur, 2011-2013.</li>
+          <li><span id="Mtech-names"></span> , , M. Tech. Thesis, IIT Kharagpur, 2011-2013.</li>
+          <li><span id="Mtech-names"></span>, , M. Tech. Thesis, IIT Kharagpur, 2011-2013.</li>
+          <li><span id="Mtech-names"></span> , , M. Tech. Thesis, IIT Kharagpur, 2010-2012.</li>
+          <li><span id="Mtech-names"></span> Chejerla Rajesh, “Transport Protocol for Underwater Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2010-2012.</li>
+          <li><span id="Mtech-names"></span> Tanmay Saha, “Mobility Model for Underwater Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2010-2012.</li>
+          <li><span id="Mtech-names"></span> Ashim Alok Ghosh, “The Effects of Variable Sound Speed on Localization in Underwater Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2009-2011.</li>
+          <li><span id="Mtech-names"></span> A. P. Sagar P., "MAcoSim: A Matlab Based Underwater Acoustic Sensor Network Simulator", M. Tech. Thesis, IIT Kharagpur, 2009-2011.</li>
+          <li><span id="Mtech-names"></span> Suresh Bollabathula, “Fault-tolerant Routing in Underwater Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2009-2011.</li>
+          <li><span id="Mtech-names"></span> Ashish Chalak, “Cluster-Head Selection Algorithm for Wireless Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2008-2010.</li>
+          <li><span id="Mtech-names"></span> Pankaj Chandra, “TBCH: Tier-Based Energy-Efficient Cluster Head Selection Method for Wireless Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2008-2010.</li>
+          <li><span id="Mtech-names"></span> Patel Manishkumar Manilal, “Key Management in Heterogeneous Wireless Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2008-2010.</li>
+          <li><span id="Mtech-names"></span> B. Balaji, “Optimization of 1-Address Code”, M. Tech. Thesis (CSDP), IIT Kharagpur, 2008-2010. [Co-Supervisor: Dr. P. Kumar, Mathematics]</li>
+          <li><span id="Mtech-names"></span> Rahul Joshi, “Cognitive Radio Wireless Networks”, M. Tech. Thesis (CSDP), IIT Kharagpur, 2008-2010 [Co-Supervisor: Dr. P. V. S. N. Murthy, Mathematics].</li>
+          <li><span id="Mtech-names"></span> Sudip Das, “Cognitive Radio Wireless Networks”, M. Tech. Thesis (CSDP), IIT Kharagpur, 2008-2010. (CSIR Junior Research Fellow) [Co-Supervisor: Dr. P. Panigrahi, Mathematics].</li>
+          <li><span id="Mtech-names"></span> Manojit Kundu, “Bipartite Overlay Construction for Gnutella Networks”, M. Tech. Thesis, IIT Kharagpur, 2007-2009.</li>
+          <li><span id="Mtech-names"></span> Dias Thomasianous, “A Simple Least Time, Energy-Efficient Routing Protocol, With One-Level Data Aggregation in Wireless Sensor Networks”, M. Tech. Thesis, IIT Kharagpur, 2007-2009.</li>
+      </ul>
+  </div> {% endcomment %}
+
+  </main><!-- End #main -->
+
+  {% endblock body %}

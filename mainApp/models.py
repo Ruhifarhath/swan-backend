@@ -7,6 +7,18 @@ class Announcement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     link = models.URLField(default='')
 
+class MTechStudent(models.Model):
+    name = models.CharField(max_length=200)
+    thesis_title = models.CharField(max_length=500)
+    thesis_year = models.CharField(max_length=50)
+    co_supervisor = models.CharField(max_length=200, blank=True, null=True)
+
+class VisitingStudent(models.Model):
+    name = models.CharField(max_length=200)
+    thesis_title = models.CharField(max_length=500)
+    intern_duration = models.CharField(max_length=100)
+    additional_info = models.CharField(max_length=500, blank=True, null=True)
+
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Visting Students{% endblock title %}
+
+{% block body %}
+  <main id="main">
+    <div class="container-mtech">
+      <h1>Visiting Students</h1>
+          <ul class="thesis-list">
+            {% for student in students %}
+            <li>
+                <span id="Mtech-names"></span> {{ student.name }}, "{{ student.thesis_title }}", {{ student.intern_duration }}.
+                {% if student.additional_info %}
+                    [{{ student.additional_info }}]
+                {% endif %}
+            </li>
+        {% endfor %}
+      {% comment %} <li>, , </li>
+      <li> , </li>
+      <li>, , , </li>
+      <li>Ranjana Ladia, "Pricing in sensor-cloud", Summer Intern from National Institute of Technology (NIT), Durgapur, India, 8th May - 7th July, 2014</li>
+      <li>Rachit Data, "Big data networking", Summer Intern from National Institute of Technology (NIT), Durgapur, India, 8th May - 7th July, 2014</li>
+      <li>Manmeet Singh Bhogal, "Big-sensor-cloud infrastructure development", Summer Intern from National Institute of Technology (NIT), Durgapur, India, 8th May - 7th July, 2014</li>
+      <li>Abhishek Gaurav, "Cloud pricing for WBANs", Summer Intern from Indian Institute of Technology (IIT), BHU, India, 8th May - 7th July, 2014</li>
+      <li>Durba Chatterjee, "Smart grid", Summer Intern from National Institute of Technology (NIT), Durgapur, India, 8th May - 7th July, 2014</li>
+      <li>Abhishek Basu, "Smart grid", Summer Intern from NRCC Institute of Information Technology, Kolkata, India, May - July, 2014</li>
+      <li>Suman Kumar Ghosh, "Smart grid", Summer Intern from NRCC Institute of Information Technology, Kolkata, India, May - July, 2014</li>
+      <li>Soumyajit Pal, "Smart grid", Summer Intern from NRCC Institute of Information Technology, Kolkata, India, May - July, 2014</li>
+      <li>Manajit Chakraborty, “Bandwidth-Aware Jamming in Sensor Networks”, Summer Intern from Indian School of Mines (ISM), Dhanbad, India, 2013</li>
+      <li>S. L. S. R. Kishore, “Performance Evaluation of Underwater Sensor Networks”, Summer Intern from Indian Institute of Technology (IIT), Bhubaneswar, India, 2013</li>
+      <li>Madhurya Gandi, “Performance Evaluation of Underwater Sensor Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2013</li>
+      <li>Nayan Ranjan Kapri, “Target Tracking in WiMAX Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2011</li>
+      <li>Nishant Kumar, “Delay-Tolerant Routing in Underwater Acoustic Networks”, Summer Intern from National Institute of Technology (NIT), Jamshedpur, India, 2011</li>
+      <li>Tushar Ghosh, “Traffic Engineering in WiMAX Mesh Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2010</li>
+      <li>Shankha S. Chatterjee, “Cognitive Radio for WiMAX Mesh Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2010</li>
+      <li>Bhaswar Banerjee, “Medium Access in WiMAX Mesh Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2010</li>
+      <li>Jayita Bhattacharya, “Fault Tolerant Routing in Wireless Networks”, Summer Intern from National Institute of Technology (NIT), Durgapur, India, 2010</li>
+      <li>Abhishek Jain, “Delay Tolerant Routing in Underwater Sensor Networks”, Summer Intern from Birla Institute of Technology and Science (BITS), Pilani, India, 2010</li>
+      <li>Suraj Dash, “Jamming in Underwater Sensor Networks”, Summer Intern from National Institute of Technology (NIT), Rourkela, India, 2010</li>
+      <li>M. Gayathri, “Development of Virtual Labs”, Summer Intern from Madanapalle Institute of Science and Technology, Andhra Pradesh, India, 2010</li>
+      <li>Ankur Jain, “Topology Management in Wireless Sensor Networks”, Visiting Student from National Institute of Technology (NIT) Durgapur, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Sweta Singh, “Target Tracking in Wireless Sensor Networks”, Visiting Student from National Institute of Technology (NIT) Durgapur, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Pavan Kumar, “Coverage in Wireless Sensor Networks”, Visiting Student from National Institute of Technology (NIT) Durgapur, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Prateek Agrawal, “Bio-Inspired Mobility Model for Mobile Ad Hoc Networks”, Visiting Student from Birla Institute of Technology and Science (BITS) Pilani, Summer Project, IIT Kharagpur, 2009</li>
+      <li>G. Rajesh, “Bio-Inspired Solutions for Routing in Mobile Ad Hoc Networks”, Visiting Student from Indian Institute of Information Technology (IIIT) Allahabad, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Ankur Vaish, “Access Control in Wireless Sensor Networks”, Visiting Student from Indian Institute of Information Technology (IIIT) Allahabad, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Chandni Agrawal, “Planning for Development of a Wireless Sensor Network Testbed”, Visiting Student from National Institute of Technology (NIT) Raipur, Summer Project, IIT Kharagpur, 2009</li>
+      <li>Sanchita Roy, “Secured Routing in Wireless Sensor Networks”, Visiting Student from National Institute of Technology (NIT) Durgapur, Summer Project, IIT Kharagpur, 2008</li>
+      <li>Debashish Mohanta, “Medium Access Control With Coordinated Adaptive Sleeping in Wireless Sensor Networks”, Visiting Student from Indian School of Mines University Dhanbad (ISMU), Summer Project, IIT Kharagpur, 2008</li>
+      <li>Y. Sreekeerthy, “Learning Automata-Based Transport Protocol for Data Networks”, Visiting Student from Kalinga Institute of Industrial Technology (KIIT) Bhubaneswar, Summer Project, IIT Kharagpur, 2008</li>
+      <li>Vivek Tiwari, “Congestion Control in Wireless Sensor Networks”, Visiting Student from National Institute of Technology (NIT) Durgapur, Summer Project, IIT Kharagpur, 2008</li> {% endcomment %}
+              </ul>
+          </div>
+
+  </main><!-- End #main -->
+
+  {% endblock body %}
