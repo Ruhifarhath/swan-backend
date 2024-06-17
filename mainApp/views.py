@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from .models import Announcement
+
 
 # Create your views here.
 def home(request):
@@ -13,3 +15,7 @@ def contact_view(request):
         else:
             return JsonResponse({'success': False, 'errors': form.errors})
     return JsonResponse({'success': False, 'errors': 'Invalid request'})
+
+def announcements_view(request):
+    announcements = Announcement.objects.all().order_by('-created_at')[:10]  # Fetch latest 10 announcements
+    return render(request, 'base.html', {'announcements': announcements})

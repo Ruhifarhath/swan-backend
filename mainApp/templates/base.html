@@ -75,7 +75,7 @@
             <li><a href="past-members.html">Past Members</a></li>
             <li><a href="mtechStudents.html">M.Tech Students</a></li>
             <li><a href="visiting-students.html">Visiting students</a></li>
-            <li class="dropdown"><a href="#"><span>Interns</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>\
+            <li class="dropdown"><a href="#"><span>Interns</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul>
                 <li><a href="#">Nptel Interns</a></li>
                 <li><a href="#">Summer Interns</a></li>
@@ -114,7 +114,6 @@
         <li class="dropdown"><a href="gallery.html"><span>Gallery</span></a></li>
         <li class="dropdown"><a href="public/liveData.html"><span>Live Data</span></a></li>
         <li class="contactus"><button id="contact-us-button">Get In Touch !</button></li>
-        
         
 
     <!-- Contact Us Form Modal -->
@@ -267,9 +266,18 @@
         <div class="col-lg-4 col-md-12">
           <div id="announce" class="trending">
             <h3>Announcements</h3>
-            <div class="trending-post-container">
-              <ul class="trending-post marquee">
+        <div class="trending-post-container">
+            <ul class="trending-post marquee">
+                {% for announcement in announcements %}
                 <li>
+                    <a href="{{ announcement.link }}">
+                        <span class="number">{{ forloop.counter }}</span>
+                        <h3>{{ announcement.title }}</h3>
+                        <span class="author">{{ announcement.author }}</span>
+                    </a>
+                </li>
+              {% endfor %}
+                {% comment %} <li>
                   <a href="single-post.html">
                     <span class="number">1</span>
                     <h3>Breakthrough in Quantum Computing: IBM Unveils New Quantum Processor</h3>
@@ -331,7 +339,7 @@
                     <h3>Breakthroughs in Biotechnology: CRISPR and Gene Editing</h3>
                     <span class="author">Jenny Wilson</span>
                   </a>
-                </li>
+                </li> {% endcomment %}
               </ul>
             </div>
           </div>
