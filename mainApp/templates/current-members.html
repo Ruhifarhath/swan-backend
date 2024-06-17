@@ -3,362 +3,132 @@
 
 {% block title %}Current Members{% endblock title %}
 {% block body %}
-
   <main id="main">
-    
     <!-- current Members section-->
     <section id="team" class="team">
       <div class="container-currentMembrs">
         <h3 id="current-members-titles">Current Members</h3>
-        <!-- Guide  -->
+
+        <!-- Guide -->
         <div id="guide">
-          <div class="team-member">
-            <div class="thumbnail">
-              <img src="{% static 'assets//img/members/sudid Mishra.jpg' %}" alt="Prof. Sudip Mishra">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <span class="title">Guide</span>
+          {% for member in members %}
+            {% if member.designation == 'Guide' %}
+              <div class="team-member">
+                <div class="thumbnail">
+                  <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                  <div class="member-meta">
+                    <span class="title">{{ member.designation }}</span>
+                  </div>
+                  <h3 class="name">{{ member.name }}</h3>
+                  <div class="social-links">
+                    {% if member.twitter %}<a target="_blank"href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>{% endif %}
+                    {% if member.facebook %}<a target="_blank"href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if member.linkedin %}<a target="_blank" href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+                  </div>
+                </div>
               </div>
-              <h3 class="name">Prof. Sudip Mishra</h3>
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
         </div>
         <!-- End Guide -->
 
         <!-- Visiting Prof -->
         <div id="visitProf">
-          <div class="team-member">
-            <div class="thumbnail">
-              <img src="{% static 'assets//img/members/sajaldas.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <span class="title">Visiting Professor</span>
+          {% for member in members %}
+            {% if member.designation == 'Visiting Professor' %}
+              <div class="team-member">
+                <div class="thumbnail">
+                  <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                  <div class="member-meta">
+                    <span class="title">{{ member.designation }}</span>
+                  </div>
+                  <h3 class="name">{{ member.name }}</h3>
+                  <div class="social-links">
+                    {% if member.twitter %}<a target="_blank" href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>{% endif %}
+                    {% if member.facebook %}<a target="_blank" href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if member.linkedin %}<a target="_blank" href="{{ member.linkedin }}"target="_blank"><i class="bi bi-linkedin"></i></a>{% endif %}
+                  </div>
+                </div>
               </div>
-              <h3 class="name">Prof. Sajal K. Das</h3>
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
         </div>
         <!-- End Visiting Prof -->
 
-    <!-- Post-Doc Students -->
-    <h1  id="current-members-titles" style="text-align: center; margin-bottom: 50px;">Post-Doc Students</h1>
-    <div class="team-members">
-      <div class="team-member">
-        <div class="thumbnail">
-          <img class="current-members-imgs" src="{% static 'assets//img/members/meetha.jpg' %}" alt="Meetha V. Shenoy">
+        <!-- Post-Doc Students -->
+        <h1 id="current-members-titles" style="text-align: center; margin-bottom: 50px;">Post-Doc Students</h1>
+        <div class="team-members">
+          {% for member in members %}
+            {% if member.designation == 'Post-Doc Student' %}
+              <div class="team-member">
+                <div class="thumbnail">
+                  <img class="current-members-imgs" src="{{ member.photo.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                  <h3 class="name">{{ member.name }}</h3>
+                  <div class="social-links">
+                    {% if member.twitter %}<a target="_blank" href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>{% endif %}
+                    {% if member.facebook %}<a target="_blank" href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if member.linkedin %}<a target="_blank" href="{{ member.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>{% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        <div class="member-info">
-          <h3 class="name">Meetha V. Shenoy</h3>
-          <div class="social-links">
-            <a href="#"><i class="bi bi-twitter"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-              
-      <div class="team-member">
-        <div class="thumbnail">
-          <img class="current-members-imgs" src="{% static 'assets//img/members/chandana.jpg' %}" alt="Prof. Sajal K. Das">
-        </div>
-        <div class="member-info">
-          <h3 class="name">Chandana Roy</h3>
-          <div class="social-links">
-            <a href="#"><i class="bi bi-twitter"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-   <!-- End Post-Doc Students  -->
+        <!-- End Post-Doc Students -->
 
-   <!-- Ph.D Students -->
-          <h1  id="current-members-titles" style=" text-align: center;">Ph.D. Students</h1>
-          <div class="team-members">
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/anudipa.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-               
+        <!-- Ph.D. Students -->
+        <h1 id="current-members-titles" style="text-align: center;">Ph.D. Students</h1>
+        <div class="team-members">
+          {% for member in members %}
+            {% if member.designation == 'Ph.D. Student' %}
+              <div class="team-member">
+                <div class="thumbnail">
+                  <img class="current-members-imgs" src="{{ member.photo.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                  <h3 class="name">{{ member.name }}</h3>
+                  <div class="social-links">
+                    {% if member.twitter %}<a target="_blank" href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>{% endif %}
+                    {% if member.facebook %}<a target="_blank" href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if member.linkedin %}<a target="_blank" href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+                  </div>
+                </div>
               </div>
-              <h3 class="name">Anudipa Mondal</h3>
-              
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/Atonu.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-              
-              </div>
-              <h3 class="name">Atonu Ghosh</h3>
-              
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/chandrani.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">C. Ray. Chowdhury</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/Kounteya.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Kounteya Sarkar</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/nidhi.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Nidhi Pathak </h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/Anandshree.png' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">N. Anandshree Singh</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/Riya.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Riya Tapwal</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-    
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/Ruelia.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Ruelia Saha</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/anshita.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Anshita Gupta</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/sharmistha.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Sharmistha Nayak</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/patrali.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Patrali Pradhan</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/ishani.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">Ishani Roy</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/bhupendra.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Ph.D. Student</span> -->
-              </div>
-              <h3 class="name">B. Kumar Mishra</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          
-         
-          
+            {% endif %}
+          {% endfor %}
         </div>
+        <!-- End Ph.D. Students -->
+
+        <!-- M.S. Students -->
         <h1 id="current-members-titles" style="text-align: center; margin-bottom: 50px;">M.S. Students</h1>
         <div class="team-members">
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/biswajit.jpg' %}" alt="Meetha V. Shenoy">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Post-Doc Student</span> -->
+          {% for member in members %}
+            {% if member.designation == 'M.S. Student' %}
+              <div class="team-member">
+                <div class="thumbnail">
+                  <img class="current-members-imgs" src="{{ member.photo.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                  <h3 class="name">{{ member.name }}</h3>
+                  <div class="social-links">
+                    {% if member.twitter %}<a target="_blank" href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>{% endif %}
+                    {% if member.facebook %}<a target="_blank" href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if member.linkedin %}<a target="_blank" href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+                  </div>
+                </div>
               </div>
-              <h3 class="name">Biswajit Ghosh</h3>
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-                  
-          <div class="team-member">
-            <div class="thumbnail">
-              <img class="current-members-imgs" src="{% static 'assets//img/members/nairit.jpg' %}" alt="Prof. Sajal K. Das">
-            </div>
-            <div class="member-info">
-              <div class="member-meta">
-                <!-- <span class="title">Post-Doc Student</span> -->
-              </div>
-              <h3 class="name">Nairit Das</h3>
-              <!-- <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p> -->
-              <div class="social-links">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
         </div>
-          <!-- Add the rest of the team-member divs here with the same structure -->
-        </div>
+        <!-- End M.S. Students -->
+
       </div>
     </section>
-
-
-  </main><!-- End #main -->
-  {% endblock body %}
+  </main>
+{% endblock body %}

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Announcement
+from .models import Member
+
 
 from .forms import ContactForm
 
@@ -22,6 +24,7 @@ def announcements_view(request):
     return render(request, 'index.html', {'announcements': announcements})
 
 def currentMembers_view(request):
+    members = Member.objects.all()
     return render(request,'current-members.html')
 
 def pastMembers_view(request):
@@ -29,6 +32,8 @@ def pastMembers_view(request):
 
 def mtech_view(request):
     return render(request,'mtechStudents.html')
-
+def current_members(request):
+    members = Member.objects.all()
+    return render(request, 'current-members.html', {'members': members})
 # def visiting_view(request):
 #     return render(request,'visiting-students.html')
