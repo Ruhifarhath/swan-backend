@@ -1,4 +1,215 @@
+
+
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
 Home
 {% endblock title %}
+
+{% block body %}
+  <!-- ======= Hero Slider Section ======= -->
+  <section id="hero-slider" class="hero-slider">
+    <br><br>
+    <div class="container-md" data-aos="fade-in">
+      <div class="row">
+        <div class="col-12">
+          <div class="swiper sliderFeaturedPosts">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/agri-1.jpg' %}');">
+                  <div class="img-bg-inner">
+                    <h2>Iot in agriculture the future of farming</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                  </div>
+                </a>
+              </div>
+   
+              <div class="swiper-slide">
+                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/drone-9.jpg' %}');">
+                  <div class="img-bg-inner">                              
+   
+                    <h2>Drone tech revolutionizing the future</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                  </div>
+                </a>
+              </div>
+   
+              <div class="swiper-slide">
+                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/inno-2.jpg' %}');">
+                  <div class="img-bg-inner">
+                    <h2>Techonolgy beyond the horizon</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                  </div>
+                </a>
+              </div>
+   
+              <div class="swiper-slide">
+                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/smart.jpg' %}');">
+                  <div class="img-bg-inner">
+                    <h2>Healthcare toucing new heights</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="custom-swiper-button-next">
+              <span class="bi-chevron-right"></span>
+            </div>
+            <div class="custom-swiper-button-prev">
+              <span class="bi-chevron-left"></span>
+            </div>
+   
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+   <!-- End Hero Slider Section -->
+   
+         <!-- Updates grouped sections of counts and announce -->
+         <div id="countsAndAnnounce">
+           <div class="container">
+             <div class="row">
+               <div class="col-lg-8 col-md-12">
+                   <!-- Facts Section -->
+         <section id="facts" class="facts">
+           <div class="container" data-aos="fade-up">
+               <div class="section-header d-flex justify-content-center align-items-center mb-5">
+                   <h1 class="text-black">We are a group of</h1>
+               </div>
+               <div class="row">
+                   <div class="col-lg-4 col-md-6">
+                       <div class="count-box">
+                           <!-- <i class="bi bi-person-fill"></i> -->
+                           <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>2</h3>
+                           <p>Post-doc students</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                       <div class="count-box">
+                         <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>14</h3>
+                           <p>Ph.D. students</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                       <div class="count-box">
+                           <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>2</h3>
+                           <p>MS students</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 mt-4">
+                       <div class="count-box">
+                           <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>14</h3>
+                           <p>MTech students</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 mt-4">
+                       <div class="count-box">
+                           <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>20</h3>
+                           <p>NPTEL Interns</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 mt-4">
+                       <div class="count-box">
+                           <i style="background-color: #ffff;" class="ri-graduation-cap-line"></i>
+                           <h3>4</h3>
+                           <p>Summer Interns</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+   <!-- End Facts Section -->
+   
+             <!-- Announcements Section -->
+           </div>
+           <div class="col-lg-4 col-md-12">
+             <div id="announce" class="trending">
+               <h3>Announcements</h3>
+           <div class="trending-post-container">
+               <ul class="trending-post marquee">
+                {% for announcement in announcements %}
+                <li class="{% if announcement.is_new %}new-announcement{% endif %}">
+                    <a href="{{ announcement.link }}" target="_blank">
+                        <span class="number">{{ forloop.counter }}</span>
+                        <h3>{{ announcement.title }}</h3>
+                        <span class="author">{{ announcement.author }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   
+     </div>
+     <!-- End Announcements section   -->
+   
+    <!-- Domains of Research Section -->
+   <section id="dor" class="services">
+     <div class="container" data-aos="fade-up">
+   
+       <div id="section-title">
+         <h1>Domains Of Research</h1>
+       </div>
+   
+       <div class="row">
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/health.jpg' %}" class="img-fluid">
+             <h4 class="text-dark">Artificial Intelligence</h4>
+             <p class="text-dark">The spirit of intelligence that defines the action of every reaction observed by the technology.</p>
+           </div>
+         </div>
+   
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/iot.jpg' %}" class="img-fluid">
+             <h4 class="text-dark">Internet Of Things</h4>
+             <p class="text-dark">Communication that Auto-alives the virtual sense.</p>
+           </div>
+         </div>
+   
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/automation.jpg' %}" class="img-fluid" style="width:90%;">
+             <h4 class="text-dark">Automation</h4>
+             <p class="text-dark">The technique of making the world self-functioning.</p>
+           </div>
+         </div>
+   
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/vr.jpg' %}" class="img-fluid"~ style="width:90%;">
+             <h4 class="text-dark">Virtual & Augmented Reality</h4>
+             <p class="text-dark">The first step in a grand adventure into the landscape of the imagination.</p>
+           </div>
+         </div>
+   
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/blockchain.jpg' %}" class="img-fluid">
+             <h4 class="text-dark">Blockchain</h4>
+             <p class="text-dark">Everything can be tokenized and connected by blockchain.</p>
+           </div>
+         </div>
+   
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+           <div class="icon-box">
+             <img src="{% static 'assets/img/iot_images/cyber-security.jpg' %}" class="img-fluid">
+             <h4 class="text-dark">Cyber Security</h4>
+             <p class="text-dark">Security used to be an inconvenience sometimes, but now it’s a necessity all the time.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+{% endblock body %}
