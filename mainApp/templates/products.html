@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Prototypes{% endblock title %}
+
+{% block body %}
+<!-- Products 1st page -->
+  <main id="main">
+    <section>
+      <div id="pdt-container">
+          <div class="row justify-content-center">
+              <div class="col-md-9" data-aos="fade-up">
+                  <h3 id="current-members-titles">Our Prototypes</h3>
+  
+                  {% for prototype in prototypes %}
+                  <!-- Pdt-item -->
+                  <div id="product-item" class="d-md-flex post-entry-2 half">
+                      <a href="{{ prototype.link }}" target="_blank">
+                          <img id="pdt-img" src="{{ prototype.image.url }}" alt="" class="img-fluid">
+                      </a>
+                      <div id="pdt-info">
+                          <h4><a href="{{ prototype.link }}" target="_blank">{{ prototype.name }}</a></h4>
+                          <p>{{ prototype.description }}</p>
+                      </div>
+                  </div>
+                  <!-- End Pdt-item -->
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+  </section>
+  </main><!-- End #main -->
+
+  {% endblock body %}
+  

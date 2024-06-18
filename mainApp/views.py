@@ -72,9 +72,17 @@ def edited_books_view(request):
 def patents_view(request):
     patents = Patent.objects.all()
     return render(request, 'patents.html', {'patents': patents})
+
 def sponsors_view(request):
     sponsors = Sponsor.objects.all()
     return render(request, 'sponsors.html', {'sponsors': sponsors})
+
+def gallery_view(request):
+    images = GalleryImage.objects.all()
+    return render(request, 'gallery.html', {'images': images})
     
+def prototypes_view(request):
+    prototypes = Prototype.objects.all()
+    return render(request, 'products.html', {'prototypes': prototypes})
 
 

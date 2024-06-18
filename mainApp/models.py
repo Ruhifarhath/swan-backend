@@ -1,6 +1,16 @@
 # models.py
 from django.db import models
 
+class Prototype(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='prototypes/')
+    link = models.URLField()
+
+class GalleryImage(models.Model):
+    image = models.ImageField(upload_to='gallery/')
+    description = models.CharField(max_length=255, blank=True)
+
 class Sponsor(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -69,6 +79,7 @@ class Announcement(models.Model):
     author = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     link = models.URLField(default='')
+    is_new = models.BooleanField(default=False)  
 
 class MTechStudent(models.Model):
     name = models.CharField(max_length=200)
