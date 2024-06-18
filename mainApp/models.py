@@ -1,6 +1,57 @@
 # models.py
 from django.db import models
 
+class EditedBooks(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    link = models.URLField(blank=True, null=True)
+
+class AuthoredBooks(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    link = models.URLField(blank=True, null=True)
+
+class BookChapters(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    link = models.URLField(blank=True, null=True)
+
+class CoferencePapers(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    link = models.URLField(blank=True, null=True)
+
+
+class JournalPapers(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    journal = models.CharField(max_length=255)
+    year = models.IntegerField()
+    volume = models.CharField(max_length=50, blank=True, null=True)
+    issue = models.CharField(max_length=50, blank=True, null=True)
+    pages = models.CharField(max_length=50, blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class AwardWinningPaper(models.Model):
+    award = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    journal = models.CharField(max_length=255)
+    year = models.IntegerField()
+    volume = models.CharField(max_length=50, blank=True, null=True)
+    issue = models.CharField(max_length=50, blank=True, null=True)
+    pages = models.CharField(max_length=50, blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+
 class Announcement(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=100)

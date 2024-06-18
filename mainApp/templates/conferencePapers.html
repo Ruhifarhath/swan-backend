@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Conference Papers{% endblock title %}
+
+{% block body %}
+  <main id="main">  
+    <h1  id="paper-heading"  style="color: #000000; font-family: Georgia, 'Times New Roman', Times, serif;">Conference Papers</h1>
+<!-- Timeline 5 - Bootstrap Brain Component -->
+
+<section class="bsb-timeline-5 py-5 py-xl-8">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-xl-8">
+              <ul class="timeline">
+                  {% for publication in publications %}
+                      <li id="publication-item-full" class="timeline-item">
+                          <span class="timeline-icon">{{ forloop.counter }}</span>
+                          <a href="{{ publication.link }}" target="_blank">
+                              <div class="timeline-body">
+                                  <div class="timeline-content">
+                                      <div id="publication-item-body" class="card text">
+                                          <div id="publication-item-award" class="card-header">{{ publication.award }}</div>
+                                          <div class="card-body">
+                                              <h5 class="card-title">{{ publication.title }}</h5>
+                                              <p>{{ publication.authors }}</p>
+                                              
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+        
+  </main><!-- End #main -->
+  {% endblock body %}
+ 

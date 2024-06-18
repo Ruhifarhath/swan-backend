@@ -41,5 +41,33 @@ def visiting_students_view(request):
 def current_members(request):
     members = Member.objects.all()
     return render(request, 'current-members.html', {'members': members})
-# def visiting_view(request):
-#     return render(request,'visiting-students.html')
+
+
+def award_winning_papers_view(request):
+    papers = AwardWinningPaper.objects.all().order_by('-year')
+    return render(request, 'awardPapers.html', {'papers': papers})
+
+
+
+def journal_papers_view(request):
+    publications = JournalPapers.objects.all().order_by('-year')
+    return render(request, 'journalPapers.html', {'publications': publications})
+
+def conference_papers_view(request):
+    publications = CoferencePapers.objects.all()
+    return render(request, 'conferencePapers.html', {'publications': publications})
+    
+def book_chapters_view(request):
+    publications = BookChapters.objects.all()
+    return render(request, 'bookChapters.html', {'publications': publications})
+    
+def authored_books_view(request):
+    publications = AuthoredBooks.objects.all()
+    return render(request, 'authoredBooks.html', {'publications': publications})
+
+def edited_books_view(request):
+    publications = EditedBooks.objects.all()
+    return render(request, 'editedBooks.html', {'publications': publications})
+    
+
+
