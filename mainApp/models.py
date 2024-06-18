@@ -1,6 +1,12 @@
 # models.py
 from django.db import models
 
+class Patent(models.Model):
+    application_number = models.CharField(max_length=255)
+    publication_date = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+
 class EditedBooks(models.Model):
     award = models.CharField(max_length=255)
     title = models.CharField(max_length=500)

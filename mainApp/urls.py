@@ -17,6 +17,8 @@ urlpatterns = [
       path('book-chapters/', views.book_chapters_view, name='bookChapters'),
       path('authored-books/', views.authored_books_view, name='authoredBooks'),
       path('edited-books/', views.edited_books_view , name='editedBooks'),
+     path('patents/', views.patents_view, name='patents'),
+
   
     
 ]

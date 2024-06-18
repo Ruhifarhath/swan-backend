@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Patents{% endblock title %}
+
+{% block body %}
+  <main id="main">  
+    <h1  id="paper-heading"  style="color: #000000; font-family: Georgia, 'Times New Roman', Times, serif;">Filed Patents</h1>
+<!-- Timeline 5 - Bootstrap Brain Component -->
+<section class="bsb-timeline-5 py-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-8 col-xl-6">
+        <ul class="timeline">
+          {% for patent in patents %}
+            <li id="publication-item-full" class="timeline-item">
+              <span id="patent-num" class="timeline-icon">{{ forloop.counter }}</span>
+              <div class="timeline-body">
+                <div class="timeline-content">
+                  <div id="publication-item-body" class="card text">
+                    <div id="patent-app-no" class="card-header">
+                      Indian Patent Filed, Appl. No. {{ patent.application_number }}{% if patent.publication_date %},<br> Publication Date {{ patent.publication_date }}{% endif %}
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ patent.title }}</h5>
+                      <p>{{ patent.authors }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+  </main><!-- End #main -->
+  {% endblock body %}
+ 

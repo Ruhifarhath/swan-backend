@@ -68,6 +68,10 @@ def authored_books_view(request):
 def edited_books_view(request):
     publications = EditedBooks.objects.all()
     return render(request, 'editedBooks.html', {'publications': publications})
+
+def patents_view(request):
+    patents = Patent.objects.all()
+    return render(request, 'patents.html', {'patents': patents})
     
 
 
