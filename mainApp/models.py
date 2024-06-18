@@ -1,6 +1,12 @@
 # models.py
 from django.db import models
 
+class Sponsor(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='sponsors/')
+    link = models.URLField(blank=True, null=True)
+
 class Patent(models.Model):
     application_number = models.CharField(max_length=255)
     publication_date = models.CharField(max_length=255, blank=True, null=True)

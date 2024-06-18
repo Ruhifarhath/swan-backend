@@ -18,6 +18,8 @@ urlpatterns = [
       path('authored-books/', views.authored_books_view, name='authoredBooks'),
       path('edited-books/', views.edited_books_view , name='editedBooks'),
      path('patents/', views.patents_view, name='patents'),
+     path('sponsors/', views.sponsors_view, name='sponsors'),
+
 
   
     
