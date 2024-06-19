@@ -5,7 +5,8 @@ from .models import *
 from .forms import ContactForm
 
 def home(request):
-    return render(request, 'index.html')
+    announcements = Announcement.objects.all().order_by('-created_at')[:10]  # Fetch latest 10 announcements
+    return render(request, 'index.html', {'announcements': announcements})
 
 def contact_view(request):
     if request.method == 'POST':
@@ -17,9 +18,7 @@ def contact_view(request):
             return JsonResponse({'success': False, 'errors': form.errors})
     return JsonResponse({'success': False, 'errors': 'Invalid request'})
 
-def announcements_view(request):
-    announcements = Announcement.objects.all().order_by('-created_at')[:10]  # Fetch latest 10 announcements
-    return render(request, 'index.html', {'announcements': announcements})
+
 
 
 def pastMembers_view(request):

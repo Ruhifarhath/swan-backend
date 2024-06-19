@@ -2190,15 +2190,19 @@ section {
 }
 
 .timeline-item .timeline-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  /* background-color: #0D6EFD;M */
+  align-items: center;
+  background-color: var(--bsb-tl-circle-color);
+  border: var(--bsb-tl-circle-border-size) solid var(--bsb-tl-circle-border-color);
   border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
+  box-shadow: 3px 3px 0 rgba(var(--bsb-tl-circle-shadow-color), .4);
+  display: flex;
+  height: var(--bsb-tl-circle-size);
+  justify-content: center;
+  left: calc(var(--bsb-tl-circle-offset)* -1);
+  position: absolute;
+  top: 0;
+  width: var(--bsb-tl-circle-size);
+  z-index: 1;
 }
 
 
