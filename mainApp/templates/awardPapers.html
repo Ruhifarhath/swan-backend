@@ -14,7 +14,7 @@ Award Papers
                   <ul class="timeline">
                       {% for paper in papers %}
                           <li id="publication-item-full" class="timeline-item">
-                             <span class="timeline-icon">{{ forloop.counter }}</span>
+                             {% comment %} <span id="award-no"  class="timeline-icon">{{ forloop.counter }}</span> {% endcomment %}
                               <a href="{{ paper.link }}" target="_blank">
                               <div class="timeline-body">
                                   <div class="timeline-content">
