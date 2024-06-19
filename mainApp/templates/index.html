@@ -15,42 +15,16 @@ Home
         <div class="col-12">
           <div class="swiper sliderFeaturedPosts">
             <div class="swiper-wrapper">
+              {% for slide in slides %}
               <div class="swiper-slide">
-                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/agri-1.jpg' %}');">
+                <a href="{{ slide.link }}" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{{ slide.image.url }}');">
                   <div class="img-bg-inner">
-                    <h2>Iot in agriculture the future of farming</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                    <h2>{{ slide.title }}</h2>
+                    <p>{{ slide.description }}</p>
                   </div>
                 </a>
               </div>
-   
-              <div class="swiper-slide">
-                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/drone-9.jpg' %}');">
-                  <div class="img-bg-inner">                              
-   
-                    <h2>Drone tech revolutionizing the future</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
-   
-              <div class="swiper-slide">
-                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/inno-2.jpg' %}');">
-                  <div class="img-bg-inner">
-                    <h2>Techonolgy beyond the horizon</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
-   
-              <div class="swiper-slide">
-                <a href="#" id="home-slide-img" class="img-bg d-flex align-items-end" style="background-image: url('{% static 'assets/img/iot_images/smart.jpg' %}');">
-                  <div class="img-bg-inner">
-                    <h2>Healthcare toucing new heights</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
+              {% endfor %}
             </div>
             <div class="custom-swiper-button-next">
               <span class="bi-chevron-right"></span>
@@ -58,13 +32,12 @@ Home
             <div class="custom-swiper-button-prev">
               <span class="bi-chevron-left"></span>
             </div>
-   
             <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
     </div>
-   </section>
+  </section>
    <!-- End Hero Slider Section -->
    
          <!-- Updates grouped sections of counts and announce -->

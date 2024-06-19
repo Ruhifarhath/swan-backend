@@ -5,8 +5,13 @@ from .models import *
 from .forms import ContactForm
 
 def home(request):
+    slides = Slide.objects.all()
     announcements = Announcement.objects.all().order_by('-created_at')[:10]  # Fetch latest 10 announcements
-    return render(request, 'index.html', {'announcements': announcements})
+    context = {
+        'slides': slides,
+        'announcements': announcements,
+    }
+    return render(request, 'index.html', context)
 
 def contact_view(request):
     if request.method == 'POST':
@@ -22,7 +27,8 @@ def contact_view(request):
 
 
 def pastMembers_view(request):
-    return render(request,'past-members.html')
+    past_members = Member.objects.filter(is_current=False)
+    return render(request, 'past-members.html', {'members': past_members})
 
 def mtech_view(request):
     return render(request,'mtechStudents.html')
@@ -38,8 +44,8 @@ def visiting_students_view(request):
 
 
 def current_members(request):
-    members = Member.objects.all()
-    return render(request, 'current-members.html', {'members': members})
+    current_members = Member.objects.filter(is_current=True)
+    return render(request, 'current-members.html', {'members': current_members})
 
 
 def award_winning_papers_view(request):
