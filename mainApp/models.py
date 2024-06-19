@@ -1,6 +1,13 @@
 # models.py
 from django.db import models
 
+class Slide(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='slides/')
+    link = models.URLField(blank=True, null=True)
+
+
 class Prototype(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -116,6 +123,7 @@ class Member(models.Model):
     twitter = models.URLField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
+    is_current = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
