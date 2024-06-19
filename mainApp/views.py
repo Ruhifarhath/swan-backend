@@ -90,4 +90,78 @@ def prototypes_view(request):
     prototypes = Prototype.objects.all()
     return render(request, 'products.html', {'prototypes': prototypes})
 
+def ongoing_projects(request):
+    return render(request,'projects.html')
+
+
+
+def ongoing_projects_1(request):
+    return render(request,'project_templtes/project-1.html')
+
+def ongoing_projects_2(request):
+    return render(request,'project_templtes/project-2.html')
+
+def ongoing_projects_3(request):
+    return render(request,'project_templtes/project-3.html')
+
+def ongoing_projects_4(request):
+    return render(request,'project_templtes/project-4.html')
+
+def ongoing_projects_5(request):
+    return render(request,'project_templtes/project-5.html')
+
+def ongoing_projects_6(request):
+    return render(request,'project_templtes/project-6.html')
+
+def ongoing_projects_7(request):
+    return render(request,'project_templtes/project-7.html')
+
+def ongoing_projects_8(request):
+    return render(request,'project_templtes/project-8.html')
+
+def ongoing_projects_9(request):
+    return render(request,'project_templtes/project-9.html')
+
+def ongoing_projects_10(request):
+    return render(request,'project_templtes/project-10.html')
+
+def ongoing_projects_11(request):
+    return render(request,'project_templtes/project-11.html')
+
+def ongoing_projects_12(request):
+    return render(request,'project_templtes/project-12.html')
+
+
+def completed_projects(request):
+    return render(request,'completed-projects.html')
+
+def completed_projects_1(request):
+    return render(request,'project_templtes/completed-1.html')
+
+def completed_projects_2(request):
+    return render(request,'project_templtes/completed-2.html')
+
+def completed_projects_3(request):
+    return render(request,'project_templtes/completed-3.html')
+
+def completed_projects_4(request):
+    return render(request,'project_templtes/completed-4.html')
+
+def completed_projects_5(request):
+    return render(request,'project_templtes/completed-5.html')
+
+def completed_projects_6(request):
+    return render(request,'project_templtes/completed-6.html')
+
+def completed_projects_7(request):
+    return render(request,'project_templtes/completed-7.html')
+
+def completed_projects_8(request):
+    return render(request,'project_templtes/completed-8.html')
+
+def completed_projects_9(request):
+    return render(request,'project_templtes/completed-9.html')
+
+def completed_projects_10(request):
+    return render(request,'project_templtes/completed-10.html')
 

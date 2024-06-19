@@ -19,12 +19,14 @@
                           <div id="sponsor-img" class="icon flex-shrink-0">
                               <img src="{{ sponsor.image.url }}" alt="{{ sponsor.name }}">
                           </div>
+                          <a href="{{ sponsor.link|default:'#' }}" class="stretched-link" target="_blank">{{ sponsor.name }}
                           <div id="spons-description">
                               <h4 class="title">
-                                  <a href="{{ sponsor.link|default:'#' }}" class="stretched-link" target="_blank">{{ sponsor.name }}</a>
+                                 
                               </h4>
                               <p>{{ sponsor.description }}</p>
                           </div>
+                        </a>
                       </div>
                   {% endfor %}
               </div>

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Completed project 2{% endblock title %}
+
+{% block body %}
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center">
+      <div class="container position-relative d-flex flex-column align-items-center">
+        <h2 style="margin-top: 40px;"></h2>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Details Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <article class="blog-details">
+
+              <div class="post-img">
+                <img src="{% static '../static/assets/img/Products/agrisens.png' %}" alt="" class="img-fluid">
+              </div>
+              <a href="http://agrisys.iitkgp.ac.in/" target="_blank"> <h2 class="title"> Development of a Sensor based Networking System for Improved Water Management for Irrigated Crops (WMI)</h2></a>
+             
+
+              <div class="meta-top">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">March 2014-March 2017</time></a></li>
+                </ul>
+              </div><!-- End meta top -->
+
+              <div class="content">
+                <p>
+                    Over the past decade, India has witnessed a growing scarcity of and competition for water among different users (domestic, municipal, industrial, and environmental purposes). To meet the water demands of other users and to ensure food security of growing population, irrigated agriculture is under severe pressure to use water more efficiently to produce more per drop while protecting the environment. Efficient irrigation water management requires precise information on irrigation demand in near real-time. WSNs are being increasingly used for monitoring root zone soil water status, weather conditions, and nutrient status. These parameters can help in efficient water and nutrient management. However, the presently available soil moisture sensors and WSNs are mostly imported, and they do not provide flexibility in their programming. To avoid these problems and for massive adaptation of this technology by Indian farmers, it is necessary to develop low-cost WSNs, which are useful for agricultural applications.
+                </p>
+
+
+                <p>
+                    Objective of the Project:
+                    
+                        <ul>
+                            <li>To develop and test low cost wireless sensing network for irrigation water management.</li>
+                            
+                        </ul>
+              
+                </p>
+                <h5>The developed Web portal in this project is as follows:</h5><a href="http://agrisys.iitkgp.ac.in/" target="_blank">Agrisens</a>
+              </div><!-- End post content -->
+
+            </article><!-- End blog post -->
+
+            <div class="post-author d-flex align-items-center">
+              <img src="assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
+              <div>
+                <h4>Publications</h4>
+                <div id="project-publications">
+                   <h5>None</h5>
+                    <!-- <ol>
+                      <li></li>
+                    </ol> -->
+                   
+                  </div>
+              </div>
+            </div><!-- End post author -->
+
+          
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="sidebar ps-lg-4">
+              <div class="sidebar-item categories">
+              <div class="sidebar-item recent-posts">
+                <h3 class="sidebar-title">Members</h3>
+
+                <div class="mt-3">
+
+                  <div class="post-item mt-3">
+                    <img src="{% static '../static/assets/img/members/past_Members/sanku.jpg' %}" alt="" class="flex-shrink-0">
+                    <div>
+                      <h4><a href="http://sankukumarroy.wixsite.com/sanku">Sanku Kumar Roy</a></h4>
+                      <time datetime="2020-01-01">Pursuing M.S.</time>
+                    </div>
+                  </div><!-- End recent post item-->
+
+               
+                </div>
+
+              </div><!-- End sidebar recent posts-->
+
+              <div class="sidebar-item tags">
+                <h3 class="sidebar-title">Sponsors</h3>
+                <div class="post-item mt-3">
+                  <img  style="margin-top: 15px;"  src="{% static '../static/assets/img/sponsors/mhrd.png' %}" alt="" class="flex-shrink-0">
+                  <!-- <div>
+                    <h4><a href="blog-post.html">MIETY</a></h4>
+                    <time datetime="2020-01-01">Ministry of Information</time>
+                  </div> -->
+                </div><!-- End recent post item-->
+                
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End Blog Sidebar -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Blog Details Section -->
+       
+  </main><!-- End #main -->
+
+  {% endblock body %}
+  
