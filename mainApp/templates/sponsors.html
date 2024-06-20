@@ -1,37 +1,33 @@
- {% extends "base.html" %}
+{% extends "base.html" %}
 
- {% block title %}Sponsors{% endblock title %}
+{% block title %}Sponsors{% endblock title %}
 
 {% block body %}
-  <main id="main">
-    
-        <!-- ======= Our Services Section ======= -->
-        <section id="services-list" class="services-list">
-          <div class="container" data-aos="fade-up">
-              <h1></h1>
-              <div id="sponsors-header">
-                  <h2>Sponsors</h2>
-              </div>
-      
-              <div class="row gy-5">
-                  {% for sponsor in sponsors %}
-                      <div id="sponsor-item" class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                          <div id="sponsor-img" class="icon flex-shrink-0">
-                              <img src="{{ sponsor.image.url }}" alt="{{ sponsor.name }}">
-                          </div>
-                          <a href="{{ sponsor.link|default:'#' }}" class="stretched-link" target="_blank">{{ sponsor.name }}
-                          <div id="spons-description">
-                              <h4 class="title">
-                                 
-                              </h4>
-                              <p>{{ sponsor.description }}</p>
-                          </div>
-                        </a>
-                      </div>
-                  {% endfor %}
-              </div>
-          </div>
-      </section>
-  </main><!-- End #main -->
-  {% endblock body %}
-  
+<main id="main">
+    <!-- ======= Our Services Section ======= -->
+    <section id="services-list" class="services-list">
+        <div class="container" data-aos="fade-up">
+            <h1></h1>
+            <div id="sponsors-header">
+                <h2>Sponsors</h2>
+            </div>
+
+            <div class="row gy-5">
+                {% for sponsor in sponsors %}
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon flex-shrink-0">
+                        <img src="{{ sponsor.image.url }}" alt="{{ sponsor.name }}" style="height: 150px;">
+                    </div>
+                    <div class="spons-description position-relative">
+                        <h4 class="title">
+                            <a href="{{ sponsor.link|default:'#' }}" class="stretched-link" target="_blank">{{ sponsor.name }}</a>
+                        </h4>
+                        <p>{{ sponsor.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+{% endblock body %}
