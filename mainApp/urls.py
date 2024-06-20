@@ -46,6 +46,9 @@ urlpatterns = [
       path('completed-9/', views.completed_projects_9, name='completed'),
       path('completed-10/', views.completed_projects_10, name='completed'),
 
+      path('livedata/', views.live_data_view, name='completed'),
+
+
 
   
     

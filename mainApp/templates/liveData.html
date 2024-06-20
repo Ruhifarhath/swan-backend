@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}Live Data{% endblock title %}
+<head>
+  <style>
+    #iot_heading{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 10%;
+        margin-right: 13%;
+    }
+    .chart-container {
+        width: 600px;
+        height: 400px;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    .chart-container-outer {
+        margin-top: 20px;
+    }
+    .chart-container-inner {
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+</head>
+
+{% block body %}
+<body>
+  
+  <!-- Live Data section -->
+  <div class="container mt-5">
+    <h1 id="iot_heading" class="text-center">SWAN Lab Live Data</h1>
+    {% comment %} <button id="startServerBtn">Start Server</button> {% endcomment %}
+    <h2 id="lab-heading">Lab-1 Data</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="chart-container">
+          <canvas id="chartContainer1"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chart-container">
+          <canvas id="chartContainer2"></canvas>
+        </div>
+      </div>
+    </div>
+    <h2 id="lab-heading">Lab-2 Data</h2>
+    <div class="row chart-container-outer">
+      <div class="col-md-6">
+        <div class="chart-container">
+          <canvas id="chartContainer3"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chart-container">
+          <canvas id="chartContainer4"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.min.js"></script>
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+  <script src="http://127.0.0.1:5501/socket.io/socket.io.js"></script>
+
+
+  <!-- <script src="socket.io/socket.io.js"></script> -->
+  <script>
+    const socket = io('http://localhost:3000');
+    const ctx1 = document.getElementById('chartContainer1').getContext('2d');
+    const ctx2 = document.getElementById('chartContainer2').getContext('2d');
+    const ctx3 = document.getElementById('chartContainer3').getContext('2d');
+    const ctx4 = document.getElementById('chartContainer4').getContext('2d');
+
+    const data1 = { labels: [], datasets: [{ label: 'Temperature (°C)', borderColor: 'rgba(255, 99, 132, 1)', backgroundColor: 'rgba(255, 99, 132, 0.2)', data: [], fill: false }] };
+    const data2 = { labels: [], datasets: [{ label: 'Humidity (%)', borderColor: 'rgba(54, 162, 235, 1)', backgroundColor: 'rgba(54, 162, 235, 0.2)', data: [], fill: false }] };
+    const data3 = { labels: [], datasets: [{ label: 'Temperature (°C)', borderColor: 'rgba(255, 99, 132, 1)', backgroundColor: 'rgba(255, 99, 132, 0.2)', data: [], fill: false }] };
+    const data4 = { labels: [], datasets: [{ label: 'Humidity (%)', borderColor: 'rgba(54, 162, 235, 1)', backgroundColor: 'rgba(54, 162, 235, 0.2)', data: [], fill: false }] };
+
+    const options = {
+        scales: {
+            x: { type: 'time', time: { unit: 'second', tooltipFormat: 'll HH:mm:ss' }, title: { display: true, text: 'Time' } },
+            y: { title: { display: true, text: 'Value' } }
+        },
+        plugins: { legend: { display: true, position: 'top' } },
+        responsive: true,
+        maintainAspectRatio: false
+    };
+
+    const chart1 = new Chart(ctx1, { type: 'line', data: data1, options: options });
+    const chart2 = new Chart(ctx2, { type: 'line', data: data2, options: options });
+    const chart3 = new Chart(ctx3, { type: 'line', data: data3, options: options });    
+    const chart4 = new Chart(ctx4, { type: 'line', data: data4, options: options });
+
+    socket.on('sensorData', (sensorData) => {
+        const time = new Date();
+        if (data1.labels.length > 10) { data1.labels.shift(); data1.datasets[0].data.shift(); }
+        if (data2.labels.length > 10) { data2.labels.shift(); data2.datasets[0].data.shift(); }
+        if (data3.labels.length > 10) { data3.labels.shift(); data3.datasets[0].data.shift(); }
+        if (data4.labels.length > 10) { data4.labels.shift(); data4.datasets[0].data.shift(); }
+        data1.labels.push(time); data1.datasets[0].data.push({ x: time, y: sensorData.temperature });
+        data2.labels.push(time); data2.datasets[0].data.push({ x: time, y: sensorData.humidity });
+        data3.labels.push(time); data3.datasets[0].data.push({ x: time, y: sensorData.temperature });
+        data4.labels.push(time); data4.datasets[0].data.push({ x: time, y: sensorData.humidity });
+        chart1.update(); chart2.update(); chart3.update(); chart4.update();
+    });
+
+
+    document.getElementById('startServerBtn').addEventListener('click', function() {
+      fetch('http://localhost:3000/start-server', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.message);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+  {% endblock body %}
+
+    <!-- Navbar Highlight Logic -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const currentPath = window.location.pathname.split('/').pop();
+          const navbarLinks = document.querySelectorAll('#navbar ul li a');
+  
+          navbarLinks.forEach(link => {
+              const href = link.getAttribute('href').split('/').pop();
+              if (href === currentPath) {
+                  link.parentElement.classList.add('active');
+              }
+          });
+      });
+  </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -165,3 +165,5 @@ def completed_projects_9(request):
 def completed_projects_10(request):
     return render(request,'project_templtes/completed-10.html')
 
+def live_data_view(request):
+    return render(request,'liveData.html')
