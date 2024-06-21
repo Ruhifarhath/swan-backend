@@ -14,8 +14,8 @@
 
             <div class="row gy-5">
                 {% for sponsor in sponsors %}
-                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon flex-shrink-0">
+                <div id="sponsor-item"  class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div id="sponsor-img" class="icon flex-shrink-0">
                         <img src="{{ sponsor.image.url }}" alt="{{ sponsor.name }}" style="height: 150px;">
                     </div>
                     <div class="spons-description position-relative">
