@@ -1,9 +1,10 @@
 ﻿# Swan Laboratory New Website
 
-##Table of Contents
+## Table of Contents
 1. Introduction
 2. Installation
 3. Usage
+4. Using the admin features
 
 
 
@@ -38,5 +39,16 @@ This project is the new and improved version of the swan lab website .This READM
 
 2. Access the application at `http://localhost:3000`.
 
+
+## Using the admin feature
+
+```sh
+python manage.py createsuperuser
+Username (leave blank to use 'your-username'): admin
+Email address: admin@example.com
+Password: **********
+Password (again): **********
+Superuser created successfully.
+```
 
 
