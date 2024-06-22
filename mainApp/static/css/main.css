@@ -908,7 +908,7 @@ section {
 
   .mobile-nav-toggle {
     display: inline-block;
-    color: #fff; /* Updated toggle icon color to white */
+    color: rgb(0, 0, 0); /* Updated toggle icon color to white */
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -928,7 +928,7 @@ section {
     top: 15px;
     right: 15px;
     z-index: 9999;
-    color: #4a4a4a; /* Toggle icon color when active */
+    color: #000000; /* Toggle icon color when active */
   }
 
   .mobile-nav-active .navbar {
@@ -2218,18 +2218,81 @@ section {
 
 
 
-/* Media query for devices with a max width of 768px (tablets, small screens) */
-@media (max-width: 1000px) {
-  .timeline-item {
-    padding-left: 20px;
+/* Media Queries */
+@media (max-width: 991px) {
+  /* Styles for medium-sized screens */
+  #top-nav {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
   }
-  .timeline-item .timeline-icon {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+  
+  #top-nav h1 {
+    font-size: 24px;
+    margin: 10px 0;
   }
-  .timeline-item .timeline-body {
-    padding: 8px;
+
+  #swan-logo, #iit-logo {
+    height: 40px;
+  }
+
+  #top-nav #swan-heading {
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  #bottom-nav {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navbar ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  #navbar ul li a {
+    padding: 10px 20px;
+  }
+
+  .bi-list {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .search-form-wrap {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Styles for smaller screens */
+  #top-nav h1 {
+    font-size: 18px;
+  }
+
+  #login-button button {
+    font-size: 16px;
+  }
+
+  #navbar ul li a {
+    padding: 10px 20px;
+  }
+
+  .bi-list {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
   }
 }
 
@@ -3336,3 +3399,169 @@ section {
   text-decoration: none;
   cursor: pointer;
 }
+/* General styles */
+.header {
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+#top-nav {
+  background-color: #fff;
+  padding: 10px 0;
+  width: 100%;
+}
+
+#bottom-nav {
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar .dropdown ul {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.navbar .dropdown:hover ul,
+.navbar .dropdown .dropdown-indicator:hover + ul {
+  display: block;
+}
+
+/* Hamburger menu icon */
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* Search form styles */
+.search-form-wrap {
+  display: none;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-form .form-control {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+}
+
+.search-form .btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  /* Hide the navbar items by default */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px; /* Adjust top position based on your navbar height */
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  .navbar .dropdown ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  /* Show hamburger menu icon */
+  .mobile-nav-toggle {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+  /* Hide the navbar items by default */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px; /* Adjust top position based on your navbar height */
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  .navbar .dropdown ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  /* Show hamburger menu icon */
+  .mobile-nav-toggle {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+  }
+  }
+  /* Show navbar items when hamburger menu is clicked */
+  .mobile-nav-active .navbar ul {
+    display: flex;
+  }
+  }
