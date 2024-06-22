@@ -20,10 +20,18 @@
                                 <div class="timeline-body">
                                     <div class="timeline-content">
                                         <div id="publication-item-body" class="card text">
-                                            <div id="publication-item-award" class="card-header">{{ publication.award }}</div>
+                                            <div id="publication-item-award" class="card-header">{{ publication.book_title }},
+                                                {% if publication.publisher %} {{ publication.publisher}}{% endif %},
+                                                {% if publication.year %} {{ publication.year }} {% endif %}
+                                                  </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ publication.title }}</h5>
                                                 <p>{{ publication.authors }}</p>
+                                                <p>{% if publication.chapter_title %}{{ publication.chapter_title }} {% endif %}</p>
+                                                <p>{% if publication.pages %}{{ publication.pages }} {% endif %}</p>
+                                                <p>{% if publication.isbn %}{{ publication.isbn }} {% endif %}</p>
+                                                <p>{% if publication.doi %}{{ publication.doi }} {% endif %}</p>
+                                                
                                                 
                                             </div>
                                         </div>
