@@ -43,10 +43,16 @@ class AuthoredBooks(models.Model):
     link = models.URLField(blank=True, null=True)
 
 class BookChapters(models.Model):
-    award = models.CharField(max_length=255)
-    title = models.CharField(max_length=500)
-    authors = models.CharField(max_length=500)
-    link = models.URLField(blank=True, null=True)
+    book_title=models.CharField(max_length=200, null=True)
+    title = models.CharField(max_length=200)
+    authors = models.CharField(max_length=200)
+    publisher = models.CharField(max_length=200, blank=True, null=True)
+    year = models.IntegerField(blank=True, null=True)
+    chapter_title = models.CharField(max_length=200, blank=True, null=True)
+    pages = models.CharField(max_length=20, blank=True, null=True)
+    isbn = models.CharField(max_length=20, blank=True, null=True)
+    doi = models.CharField(max_length=100, blank=True, null=True)
+    link = models.URLField(max_length=500, blank=True, null=True)
 
 class CoferencePapers(models.Model):
     award = models.CharField(max_length=255)
@@ -56,14 +62,10 @@ class CoferencePapers(models.Model):
 
 
 class JournalPapers(models.Model):
-    award = models.CharField(max_length=255)
     title = models.CharField(max_length=500)
     authors = models.CharField(max_length=500)
     journal = models.CharField(max_length=255)
     year = models.IntegerField()
-    volume = models.CharField(max_length=50, blank=True, null=True)
-    issue = models.CharField(max_length=50, blank=True, null=True)
-    pages = models.CharField(max_length=50, blank=True, null=True)
     link = models.URLField(blank=True, null=True)
 
     def __str__(self):
