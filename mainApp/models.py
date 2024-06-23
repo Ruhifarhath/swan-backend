@@ -29,6 +29,7 @@ class Patent(models.Model):
     publication_date = models.CharField(max_length=255, blank=True, null=True)
     title = models.CharField(max_length=500)
     authors = models.CharField(max_length=500)
+    is_granted=models.BooleanField(default="False")
 
 class EditedBooks(models.Model):
     award = models.CharField(max_length=255)
@@ -54,11 +55,15 @@ class BookChapters(models.Model):
     doi = models.CharField(max_length=100, blank=True, null=True)
     link = models.URLField(max_length=500, blank=True, null=True)
 
-class CoferencePapers(models.Model):
-    award = models.CharField(max_length=255)
+class ConferencePaper(models.Model):
     title = models.CharField(max_length=500)
     authors = models.CharField(max_length=500)
-    link = models.URLField(blank=True, null=True)
+    conference = models.CharField(max_length=200)
+    location = models.CharField(max_length=100)
+    start_date = models.DateField(null=True)
+    end_date = models.DateField(null=True)
+    year = models.IntegerField()    
+    extra_info= models.CharField(max_length=500, null=True)
 
 
 class JournalPapers(models.Model):

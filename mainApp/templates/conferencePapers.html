@@ -19,11 +19,16 @@
                               <div class="timeline-body">
                                   <div class="timeline-content">
                                       <div id="publication-item-body" class="card text">
-                                          <div id="publication-item-award" class="card-header">{{ publication.award }}</div>
+                                          <div id="publication-item-award" class="card-header">
+                                            {{ publication.conference }}
+                                            {{ publication.location }}
+                                            {{ publication.year }}
+                                          </div>
                                           <div class="card-body">
                                               <h5 class="card-title">{{ publication.title }}</h5>
                                               <p>{{ publication.authors }}</p>
-                                              
+                                              <p>{% if publication.start_date %}{{ publication.start_date }}{% endif %} - {% if publication.end_date %}{{ publication.end_date }}{% endif %}</p>
+                                              <p>{% if publication.extra_info %}{{ publication.extra_info }}{% endif %}</p>
                                           </div>
                                       </div>
                                   </div>

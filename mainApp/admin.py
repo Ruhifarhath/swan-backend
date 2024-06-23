@@ -72,7 +72,7 @@ class ExportAdmin(admin.ModelAdmin):
 # Registering models with ExportAdmin
 admin.site.register(AwardWinningPaper, ExportAdmin)
 admin.site.register(JournalPapers, ExportAdmin)
-admin.site.register(CoferencePapers, ExportAdmin)
+admin.site.register(ConferencePaper, ExportAdmin)
 admin.site.register(BookChapters, ExportAdmin)
 admin.site.register(AuthoredBooks, ExportAdmin)
 admin.site.register(EditedBooks, ExportAdmin)

@@ -17,6 +17,7 @@ urlpatterns = [
       path('authored-books/', views.authored_books_view, name='authoredBooks'),
       path('edited-books/', views.edited_books_view , name='editedBooks'),
      path('patents/', views.patents_view, name='patents'),
+     path('granted-patents/', views.granted_patents_view, name='patents'),
      path('sponsors/', views.sponsors_view, name='sponsors'),
      path('gallery/', views.gallery_view, name='gallery'),
       path('prototypes/', views.prototypes_view, name='prototypes'),

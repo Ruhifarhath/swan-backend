@@ -59,7 +59,7 @@ def journal_papers_view(request):
     return render(request, 'journalPapers.html', {'publications': publications})
 
 def conference_papers_view(request):
-    publications = CoferencePapers.objects.all()
+    publications = ConferencePaper.objects.all()
     return render(request, 'conferencePapers.html', {'publications': publications})
     
 def book_chapters_view(request):
@@ -75,8 +75,12 @@ def edited_books_view(request):
     return render(request, 'editedBooks.html', {'publications': publications})
 
 def patents_view(request):
-    patents = Patent.objects.all()
+    patents = Patent.objects.filter(is_granted=False)
     return render(request, 'patents.html', {'patents': patents})
+
+def granted_patents_view(request):
+    patents = Patent.objects.filter(is_granted=True)
+    return render(request,'granted_patents.html',{'patents':patents})
 
 def sponsors_view(request):
     sponsors = Sponsor.objects.all()
