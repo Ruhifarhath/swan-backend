@@ -61,12 +61,10 @@
   margin-right: 20px;
 }
 
-#header #swan-logoT {
-  margin-left: 20px;
-}
+
 
 #header #swan-logoT #swan-title {
-  margin-left: 12px;
+  margin-left: 0px;
 }
 
 #hero-slider #swan-heading {
@@ -254,7 +252,7 @@ section {
 
 .close-button:hover,
 .close-button:focus {
-  color: rgb(221, 221, 221);
+  color: rgb(255, 252, 252);
   text-decoration: none;
   cursor: pointer;
 }
