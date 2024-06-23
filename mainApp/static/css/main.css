@@ -1,14 +1,4 @@
-/**
-* Template Name: ZenBlog
-* Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https:///bootstrapmade.com/license/
-*/
 
-/**
-* Check out variables.css for easy customization of colors, typography, and other repetitive properties
-*/
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -264,7 +254,7 @@ section {
 
 .close-button:hover,
 .close-button:focus {
-  color: black;
+  color: rgb(221, 221, 221);
   text-decoration: none;
   cursor: pointer;
 }
@@ -277,7 +267,8 @@ section {
 
 #contact-form label {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 199px;
+  color: #00a6c7;
   font-weight: bold;
 }
 
