@@ -7,10 +7,10 @@
     <!-- Past Members section-->
     <section id="team" class="team">
       <div class="container-pastMembrs">
-        <h3 id="current-members-titles" style="text-align: center; margin-bottom: 50px;">Past Members</h3>
+        <h3 id="past-members-title" style="text-align: center; margin-bottom: 50px;">Past Members</h3>
 
         <!-- Post-Doc Researchers -->
-        <h1 id="past-members-titles" style="text-align: center; margin-bottom: 50px;">Post-Doc Researchers</h1>
+        <h1 id="current-members-titles" style="text-align: center; margin-bottom: 50px;">Post-Doc Researchers</h1>
         <div class="team-members">
           {% for member in members %}
             {% if member.designation == 'Post-Doc Student' %}
@@ -53,7 +53,7 @@
           {% endfor %}
         </div>
         <!-- M.S. (by Research) Students -->
-        <h1 id="past-members-titles" style="text-align: center; margin-bottom: 50px;">M.S. (by Research) Students</h1>
+        <h1 id="current-members-titles" style="text-align: center; margin-bottom: 50px;">M.S. (by Research) Students</h1>
         <div class="team-members">
           {% for member in members %}
             {% if member.designation == 'M.S. Student' %}

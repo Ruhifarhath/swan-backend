@@ -123,6 +123,7 @@ section {
 }
 #swan-logo {
   height: 50px;
+  margin-left: 30%;
 }
 #iit-logoT {
   margin-left: -2%;
@@ -151,9 +152,11 @@ section {
 
 #navbar ul li {
   margin-right: 20px;
+ 
 }
 
 #navbar ul li a {
+  font-size: 18px; 
   color: white;
   text-decoration: none;
   padding: 10px 15px;
@@ -244,7 +247,8 @@ section {
 
 /* Close button */
 .close-button {
-  color: #aaa;
+  color: #e4e4e4;
+  margin-left:93%;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -264,13 +268,13 @@ section {
 }
 
 #contact-heading{
-  font-size: 24px;
+  font-size: 28px;
   color:#c4c4c4;
 }
 
 #contact-form label {
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 20px;
   color: #c4c4c4;
 }
 
