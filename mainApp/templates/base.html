@@ -130,7 +130,7 @@
   <div id="contact-form-modal" class="modal">
     <div class="modal-content">
       <span class="close-button">&times;</span>
-      <h2>Contact Us</h2>
+      <h2 id="contact-heading">Contact Us</h2>
       <form id="contact-form" method="post" action="{% url 'contact' %}">
         {% csrf_token %}
         <label for="id_name">Name:</label>

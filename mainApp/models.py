@@ -30,6 +30,7 @@ class Patent(models.Model):
     title = models.CharField(max_length=500)
     authors = models.CharField(max_length=500)
     is_granted=models.BooleanField(default="False")
+    
 
 class EditedBooks(models.Model):
     award = models.CharField(max_length=255)

@@ -263,11 +263,15 @@ section {
   flex-direction: column;
 }
 
+#contact-heading{
+  font-size: 24px;
+  color:#c4c4c4;
+}
+
 #contact-form label {
   margin-top: 10px;
-  font-size: 199px;
-  color: #00a6c7;
-  font-weight: bold;
+  font-size: 24px;
+  color: #c4c4c4;
 }
 
 #contact-form input[type="text"],
